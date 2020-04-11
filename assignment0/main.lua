@@ -242,10 +242,15 @@ function love.update(dt)
     end
 
     -- player 2 - AI controlled
+    -- if the ball is between the top and bottom of the paddle then initialize the paddle speed at 0
+        -- this avoids stuttering when paddle should be stationary
     if ( ball.y > player2.y ) and ( ball.y + ball.height < player2.y + player2.height ) then
         player2.dy = 0
+    -- if the paddle is below the ball, then give it a negative y speed
+        -- slower than player, so it's not unbeatable - value found through testing
     elseif player2.y + player2.height > ball.y + ball.height then
         player2.dy = -PADDLE_SPEED * 0.6
+    -- if the paddle is above the ball, then give it a positive y speed
     elseif player2.y < ball.y   then
         player2.dy = PADDLE_SPEED * 0.6
     end
