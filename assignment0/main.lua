@@ -249,10 +249,10 @@ function love.update(dt)
     -- if the paddle is below the ball, then give it a negative y speed
         -- slower than player, so it's not unbeatable - value found through testing
     elseif player2.y + player2.height > ball.y + ball.height then
-        player2.dy = -PADDLE_SPEED * 0.6
+        player2.dy = -PADDLE_SPEED * 0.63
     -- if the paddle is above the ball, then give it a positive y speed
     elseif player2.y < ball.y   then
-        player2.dy = PADDLE_SPEED * 0.6
+        player2.dy = PADDLE_SPEED * 0.63
     end
 
     -- update our ball based on its DX and DY only if we're in play state;
