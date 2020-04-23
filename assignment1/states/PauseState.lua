@@ -63,7 +63,6 @@ function PauseState:enter(params)
         -- save the passed play state in the instance variable
         self.savedPlayState = params.currentPlayState
     end
-    groundScroll = 0
     -- pause music
     sounds['music']:pause()
     sounds['pause']:play()
