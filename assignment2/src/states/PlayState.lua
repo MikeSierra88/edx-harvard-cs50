@@ -268,6 +268,7 @@ function PlayState:update(dt)
                     self.balls[newBallNum].skin = math.random(7)
                 end
             end
+            gSounds['recover']:play()
             -- despawn powerup
             table.remove(self.powerups, k)
             break
